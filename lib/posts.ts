@@ -18,12 +18,12 @@ export function getSortedPostsData() {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Parse metadata section
-    const matterResult = matter(fileContents);
+    const matterResult = matter(fileContents);    
 
     // Combine the data and the id
     return {
       id,
-      ...matterResult.data
+      ...(matterResult.data as { date: string, title: string })
     }
   });
   // Sort posts by date
