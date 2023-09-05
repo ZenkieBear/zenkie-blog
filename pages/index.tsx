@@ -22,13 +22,11 @@ export default function Home({ allPostsData }: {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <link rel='canonical' href='https://blog.zenkie.cn/' />
+        <meta property="og:title" content={siteTitle} />
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>I’m Zenkie Bear, {age} years. I’m a <strong>Full-Stack Develope Engineer</strong>. I work in China</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        <p>I’m Zenkie Bear, {age} years. I’m a <strong>Full-Stack Develope Engineer</strong> work in China.</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
