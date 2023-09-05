@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import DateBox from '../components/date';
 import Layout, { siteTitle } from '../components/layout';
-import SassDemo from '../components/SassDemo/SassDemo';
 import { getSortedPostsData } from '../lib/posts';
 import utilStyles from '../styles/utils.module.css';
 
