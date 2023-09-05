@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 
 const name = 'Zenkie Bear';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = `Zenkie's Blog`;
 
 export default function Layout({ children, home }: {
   children: ReactNode,
@@ -15,18 +15,10 @@ export default function Layout({ children, home }: {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle,
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="This is Zenkie Bear’s Blog. I write about programming, design and life~" />
+        <meta property="og:description" content="This is Zenkie Bear’s Blog. I write about programming, design and life~" />
+        <meta property='og:image' content='https://blog.zenkie.cn/_next/image?url=%2Fimages%2Fprofile.jpg&w=384&q=75' />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
