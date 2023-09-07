@@ -73,7 +73,10 @@ export async function getPostData(id) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await unified()
+    // todo remove this if there's a new adaptered plugin version
+    // @ts-expect-error
     .use(remarkParse)
+    // @ts-expect-error
     .use(remarkRehype)
     .use(rehypeFormat)
     .use(rehypeDocument)
@@ -81,7 +84,8 @@ export async function getPostData(id) {
     .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString()
-    .replace('<pre>', '<pre class="codebox">')
+    .replaceAll('<pre>', '<pre class="codebox">')
+    .replaceAll('<code>', '<code class="inline">')
 
   // Combine the data with the id
   return {
