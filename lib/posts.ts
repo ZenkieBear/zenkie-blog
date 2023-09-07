@@ -1,8 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html'
+import { unified } from 'unified';
+import remarkRehype from 'remark-rehype';
+import remarkParse from 'remark-parse';
+import rehypeFormat from 'rehype-format';
+import rehypeDocument from 'rehype-document';
+import rehypeStringify from 'rehype-stringify';
+import rehypeHighlight from 'rehype-highlight';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -67,10 +72,20 @@ export async function getPostData(id) {
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
+  const processedContent = await unified()
+    // todo remove this if there's a new adaptered plugin version
+    // @ts-expect-error
+    .use(remarkParse)
+    // @ts-expect-error
+    .use(remarkRehype)
+    .use(rehypeFormat)
+    .use(rehypeDocument)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = processedContent.toString()
+    .replaceAll('<pre>', '<pre class="codebox">')
+    .replaceAll('<code>', '<code class="inline">')
 
   // Combine the data with the id
   return {
