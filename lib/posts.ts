@@ -8,8 +8,6 @@ import rehypeFormat from 'rehype-format';
 import rehypeDocument from 'rehype-document';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
-import { common } from 'lowlight';
-import javascript from 'highlight.js/lib/languages/javascript';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -84,7 +82,6 @@ export async function getPostData(id) {
     .process(matterResult.content);
   const contentHtml = processedContent.toString()
     .replace('<pre>', '<pre class="codebox">')
-  
 
   // Combine the data with the id
   return {
