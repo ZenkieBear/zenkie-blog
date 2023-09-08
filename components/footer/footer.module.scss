@@ -1,0 +1,15 @@
+@use '@/styles/variables';
+$clr-primary: variables.$clr-primary;
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: 100px;
+  color: darken($color: $clr-primary, $amount: 25);
+  font-size: .8rem;
+  font-weight: bold;
+  font-family: 'Cascadia Code';
+  text-align: center;
+}
