@@ -1,5 +1,14 @@
 // Variables
 $clr-primary: #0070f3;
+$clr-code-keyword: #68cdfe;
+$clr-code-string: #ce9178;
+$clr-code-number: #94cea8;
+$clr-code-class: #9cd6d3;
+$clr-code-function: #dcdc8b;
+$clr-code-comment: #6a9955;
+$clr-code-bg: #1e1e1e;
+$clr-code-inline-bg: #f2f2f2;
+$font-code: 'Cascadia Code';
 
 // Basics
 html,
@@ -35,43 +44,56 @@ img {
 
 // Components
 pre.codebox {
+
   padding: 10px 15px;
   border-radius: 10px;
-  background: #1e1e1e;
+  background: $clr-code-bg;
   line-height: 1.1em;
 
   code.hljs {
     color: white;
-    font-family: 'Cascadia Code';
+    font-family: $font-code;
     font-weight: normal;
     font-size: 12px;
     line-height: 10px;
-    // highlight colors
-    $keyword: #68cdfe;
-    $string: #ce9178;
-    $number: #94cea8;
-    $class: #9cd6d3;
-    $function: #dcdc8b;
 
     .hljs-keyword {
-      color: $keyword;
+      color: $clr-code-keyword;
     }
     .hljs-variable {
-      color: $class;
+      color: $clr-code-class;
     }
     .hljs-title {
       &.function_ {
-        color: $function;
+        color: $clr-code-function;
       }
       &.class_ {
-        color: $class;
+        color: $clr-code-class;
       }
     }
     .hljs-number {
-      color: $number;
+      color: $clr-code-number;
     }
     .hljs-string {
-      color: $string;
+      color: $clr-code-string;
+    }
+    .hljs-comment {
+      color: $clr-code-comment;
     }
   }
+}
+code.inline {
+
+  font-family: $font-code;
+  background-color: $clr-code-inline-bg;
+  display: inline-block;
+  line-height: 1em;
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+
+}
+a > code.inline:hover {
+  text-decoration: underline;
+  background-color: darken($color: $clr-code-inline-bg, $amount: 5);
 }
