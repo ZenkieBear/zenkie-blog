@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
+import utilStyles from '@/styles/utils.module.css';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import Footer from '@/components/footer/footer';
 
 const name = 'Zenkie Bear';
-export const siteTitle = `Zenkie's Blog`;
+export const siteTitle = `Zenkie Bear's Blog`;
 
 export default function Layout({ children, home }: {
   children: ReactNode,
@@ -60,6 +61,7 @@ export default function Layout({ children, home }: {
           <Link href="/">← Back to home</Link>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

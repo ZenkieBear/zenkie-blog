@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Date from "../../components/date";
-import Layout, { siteTitle } from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
-import utilStyles from '../../styles/utils.module.css';
+import Date from "@/components/date";
+import Layout, { siteTitle } from "@/components/layout/layout";
+import { getAllPostIds, getPostData } from "@/lib/posts";
+import utilStyles from '@/styles/utils.module.css';
 
 export default function Post({ postData }: {
   postData: {
@@ -16,7 +16,7 @@ export default function Post({ postData }: {
   return (
     <Layout>
       <Head>
-        <title>{`${postData.id} - ${postData.title}`}</title>
+        <title>{`${postData.title} - ${siteTitle}`}</title>
         <link rel='canonical' href={`https://blog.zenkie.cn/posts/${postData.id}`} />
         <meta property="og:title" content={`${postData.title} - ${siteTitle}`} />
       </Head>

@@ -1,14 +1,15 @@
+@use 'variables';
 // Variables
-$clr-primary: #0070f3;
-$clr-code-keyword: #68cdfe;
-$clr-code-string: #ce9178;
-$clr-code-number: #94cea8;
-$clr-code-class: #9cd6d3;
-$clr-code-function: #dcdc8b;
-$clr-code-comment: #6a9955;
-$clr-code-bg: #1e1e1e;
-$clr-code-inline-bg: #f2f2f2;
-$font-code: 'Cascadia Code';
+$clr-primary: variables.$clr-primary;
+$clr-code-keyword: variables.$clr-code-keyword;
+$clr-code-string: variables.$clr-code-string;
+$clr-code-number: variables.$clr-code-number;
+$clr-code-class: variables.$clr-code-class;
+$clr-code-function: variables.$clr-code-function;
+$clr-code-comment: variables.$clr-code-comment;
+$clr-code-bg: variables.$clr-code-bg;
+$clr-code-inline-bg: variables.$clr-code-inline-bg;
+$font-code: variables.$font-code;
 
 // Basics
 html,

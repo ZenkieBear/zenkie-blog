@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import DateBox from '../components/date';
-import Layout, { siteTitle } from '../components/layout';
-import { getSortedPostsData } from '../lib/posts';
-import utilStyles from '../styles/utils.module.css';
+import DateBox from '@/components/date';
+import Layout, { siteTitle } from '@/components/layout/layout';
+import { getSortedPostsData } from '@/lib/posts';
+import utilStyles from '@/styles/utils.module.css';
 
 export default function Home({ allPostsData }: {
   allPostsData: {
@@ -25,7 +25,7 @@ export default function Home({ allPostsData }: {
         <meta property="og:title" content={siteTitle} />
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>I’m Zenkie Bear, {age} years. I’m a <strong>Full-Stack Develope Engineer</strong> work in China.</p>
+        <p>I’m Zenkie Bear, {age} years old. I’m a <strong>Full-Stack Development Engineer</strong> work in China.</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
