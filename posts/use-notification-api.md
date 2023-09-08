@@ -43,7 +43,7 @@ The string **hi there** passed in construction is notificator’s **title**.
 The second optional parameter of Notification’s constructor is an [`options`](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification) object. You can enrich your notification content through it.
 
 ```javascript
-const notify = new Notification('hi here', {
+const notify = new Notification('hi there', {
   body: 'I’m Zenkie Bear, thank you for visiting my blog.',
   icon: '/images/profile.jpg',
   data: {
