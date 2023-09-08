@@ -16,7 +16,7 @@ export default function Post({ postData }: {
   return (
     <Layout>
       <Head>
-        <title>{`${postData.id} - ${postData.title}`}</title>
+        <title>{`${postData.title} - ${siteTitle}`}</title>
         <link rel='canonical' href={`https://blog.zenkie.cn/posts/${postData.id}`} />
         <meta property="og:title" content={`${postData.title} - ${siteTitle}`} />
       </Head>

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 
 const name = 'Zenkie Bear';
-export const siteTitle = `Zenkie's Blog`;
+export const siteTitle = `Zenkie Bear's Blog`;
 
 export default function Layout({ children, home }: {
   children: ReactNode,
