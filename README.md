@@ -1,5 +1,5 @@
-![Static Badge](https://img.shields.io/badge/License-MIT-default?style=flat-square)
-![Static Badge](https://img.shields.io/badge/Vercel-Powered-black?style=flat-square&logo=vercel&logoColor=black&labelColor=ffffff)
+[![Static Badge](https://img.shields.io/badge/License-MIT-default?style=flat-square)](LICENSE)
+[![Static Badge](https://img.shields.io/badge/Vercel-Powered-black?style=flat-square&logo=vercel&logoColor=black&labelColor=ffffff)](https://vercel.com/dashboard)
 
 
 
