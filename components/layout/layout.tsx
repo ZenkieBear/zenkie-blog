@@ -5,6 +5,7 @@ import utilStyles from '@/styles/utils.module.css';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import Footer from '@/components/footer/footer';
+import { Analytics } from '@vercel/analytics/react';
 
 const name = 'Zenkie Bear';
 export const siteTitle = `Zenkie Bear's Blog`;
@@ -62,6 +63,7 @@ export default function Layout({ children, home }: {
         </div>
       )}
       <Footer />
+      <Analytics />
     </div>
   );
 }
