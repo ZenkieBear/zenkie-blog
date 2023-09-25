@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 80"
+    "start": "next start -p 80",
+    "lint": "next lint && npx prettier -w .",
+    "prepare": "husky install && npx husky add .husky/pre-commit \"npx lint-staged\""
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.2",
@@ -25,6 +27,11 @@
   "devDependencies": {
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.2",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "sass": "^1.66.1",
     "typescript": "5.2.2"
   }
