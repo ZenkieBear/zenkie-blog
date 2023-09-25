@@ -11,6 +11,7 @@
     "@vercel/analytics": "^1.0.2",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
+    "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "lowlight": "^3.0.0",
     "next": "latest",
@@ -22,6 +23,7 @@
     "rehype-stringify": "^10.0.0",
     "remark-parse": "^10.0.2",
     "remark-rehype": "^10.1.0",
+    "styled-components": "^6.0.8",
     "unified": "^11.0.3"
   },
   "devDependencies": {
