@@ -15,10 +15,6 @@ export default function Home({
     id: string
   }[]
 }) {
-  const now = new Date()
-  const birthday = new Date('2004')
-  const age = now.getFullYear() - birthday.getFullYear()
-
   return (
     <Layout home>
       <Head>
@@ -28,8 +24,10 @@ export default function Home({
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          I’m Zenkie Bear, {age} years old. I’m a{' '}
+          👋🏼 Hi there! I am Zenkie Bear, a{' '}
           <strong>Full-Stack Development Engineer</strong> work in China.
+          <br />I like programming, contribute for opensource community, I will
+          share useful imformations here.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
