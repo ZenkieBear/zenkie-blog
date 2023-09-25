@@ -5,6 +5,8 @@ import DateBox from '@/components/date'
 import Layout, { siteTitle } from '@/components/layout/layout'
 import { getSortedPostsData } from '@/lib/posts'
 import utilStyles from '@/styles/utils.module.css'
+import { motion } from 'framer-motion'
+import { ReactNode } from 'react'
 
 export default function Home({
   allPostsData
@@ -24,7 +26,7 @@ export default function Home({
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          👋🏼 Hi there! I am Zenkie Bear, a{' '}
+          <Shake>👋🏼</Shake> Hi there! I am Zenkie Bear, a{' '}
           <strong>Full-Stack Development Engineer</strong> work in China.
           <br />I like programming, contribute for opensource community, I will
           share useful imformations here.
@@ -46,6 +48,27 @@ export default function Home({
       </section>
       {/* <SassDemo /> */}
     </Layout>
+  )
+}
+
+interface ShakeProps {
+  children: ReactNode
+}
+const Shake = ({ children }: ShakeProps) => {
+  return (
+    <motion.span
+      style={{ display: 'inline-block' }}
+      animate={{
+        x: [8, 0],
+        y: [-10, 0],
+        transition: {
+          type: 'spring',
+          stiffness: 1000
+        }
+      }}
+    >
+      {children}
+    </motion.span>
   )
 }
 
