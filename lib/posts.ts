@@ -1,48 +1,48 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { unified } from 'unified';
-import remarkRehype from 'remark-rehype';
-import remarkParse from 'remark-parse';
-import rehypeFormat from 'rehype-format';
-import rehypeDocument from 'rehype-document';
-import rehypeStringify from 'rehype-stringify';
-import rehypeHighlight from 'rehype-highlight';
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { unified } from 'unified'
+import remarkRehype from 'remark-rehype'
+import remarkParse from 'remark-parse'
+import rehypeFormat from 'rehype-format'
+import rehypeDocument from 'rehype-document'
+import rehypeStringify from 'rehype-stringify'
+import rehypeHighlight from 'rehype-highlight'
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join(process.cwd(), 'posts')
 
 export function getSortedPostsData() {
   // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map(fileName => {
     // Remove ".md" from the file name to get id
-    const id = fileName.replace(/\.md$/, '');
+    const id = fileName.replace(/\.md$/, '')
 
     // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
 
     // Parse metadata section
-    const matterResult = matter(fileContents);    
+    const matterResult = matter(fileContents)
 
     // Combine the data and the id
     return {
       id,
-      ...(matterResult.data as { date: string, title: string })
+      ...(matterResult.data as { date: string; title: string })
     }
-  });
+  })
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
-      return 1;
+      return 1
     } else {
-      return -1;
+      return -1
     }
   })
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory)
 
   // Returns an array that looks like this:
   // [
@@ -65,11 +65,11 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(id) {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents);
+  const matterResult = matter(fileContents)
 
   // Use remark to convert markdown into HTML string
   const processedContent = await unified()
@@ -82,8 +82,9 @@ export async function getPostData(id) {
     .use(rehypeDocument)
     .use(rehypeHighlight)
     .use(rehypeStringify)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString()
+    .process(matterResult.content)
+  const contentHtml = processedContent
+    .toString()
     .replaceAll('<pre>', '<pre class="codebox">')
     .replaceAll('<code>', '<code class="inline">')
 
