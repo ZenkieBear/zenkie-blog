@@ -1,11 +1,11 @@
 const path = require('path')
 
-const testEslint = filenames =>
-  `next lint --fix --file ${filenames
+const testEslint = names =>
+  `next lint --fix --file ${names
     .map(name => path.relative(process.cwd(), name))
     .join(' --file ')}`
-const prettiering = filenames =>
-  `npx prettier -w ${filenames
+const prettiering = names =>
+  `npx prettier -w ${names
     .map(name => path.relative(process.cwd(), name))
     .join(' ')}`
 
