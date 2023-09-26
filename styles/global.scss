@@ -1,17 +1,4 @@
-@use 'variables';
 @use 'fonts';
-
-// Variables
-$clr-primary: variables.$clr-primary;
-$clr-code-keyword: variables.$clr-code-keyword;
-$clr-code-string: variables.$clr-code-string;
-$clr-code-number: variables.$clr-code-number;
-$clr-code-class: variables.$clr-code-class;
-$clr-code-function: variables.$clr-code-function;
-$clr-code-comment: variables.$clr-code-comment;
-$clr-code-bg: variables.$clr-code-bg;
-$clr-code-inline-bg: variables.$clr-code-inline-bg;
-$font-code: variables.$font-code;
 
 // Basics
 html,
@@ -38,11 +25,11 @@ body {
   box-sizing: border-box;
 }
 ::selection {
-  background-color: $clr-primary;
+  background-color: variables.$clr-primary;
   color: white;
 }
 a {
-  color: $clr-primary;
+  color: variables.$clr-primary;
   text-decoration: none;
 
   &:hover {
@@ -59,44 +46,47 @@ img {
 pre.codebox {
   padding: 10px 15px;
   border-radius: 10px;
-  background: $clr-code-bg;
+  background: variables.$clr-code-bg;
   line-height: 1.1em;
 
   code.hljs {
     color: white;
-    font-family: $font-code;
+    font-family: variables.$font-code;
     font-weight: normal;
     font-size: 12px;
     line-height: 10px;
 
     .hljs-keyword {
-      color: $clr-code-keyword;
+      color: variables.$clr-code-keyword;
     }
     .hljs-variable {
-      color: $clr-code-class;
+      color: variables.$clr-code-class;
     }
     .hljs-title {
       &.function_ {
-        color: $clr-code-function;
+        color: variables.$clr-code-function;
       }
       &.class_ {
-        color: $clr-code-class;
+        color: variables.$clr-code-class;
       }
     }
     .hljs-number {
-      color: $clr-code-number;
+      color: variables.$clr-code-number;
     }
     .hljs-string {
-      color: $clr-code-string;
+      color: variables.$clr-code-string;
     }
     .hljs-comment {
-      color: $clr-code-comment;
+      color: variables.$clr-code-comment;
+    }
+    .hljs-attr {
+      color: variables.$clr-code-attr;
     }
   }
 }
 code.inline {
-  font-family: $font-code;
-  background-color: $clr-code-inline-bg;
+  font-family: variables.$font-code;
+  background-color: variables.$clr-code-inline-bg;
   display: inline-block;
   line-height: 1em;
   padding: 3px 5px;
@@ -105,5 +95,5 @@ code.inline {
 }
 a > code.inline:hover {
   text-decoration: underline;
-  background-color: darken($color: $clr-code-inline-bg, $amount: 5);
+  background-color: darken($color: variables.$clr-code-inline-bg, $amount: 5);
 }
