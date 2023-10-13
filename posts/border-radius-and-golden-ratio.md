@@ -5,7 +5,7 @@ date: '2023-10-12'
 
 # Intro
 
-A few years ago, when I learned `border-radius`, I felt very fulfilled. It could make our html element beautiful. And then I became confused: “How to organize the size of the border-radius?”. This question followed me for a long time.
+A few years ago, when I learned `border-radius`, I felt very fulfilled. It could make my html elements beautiful. And then I became confused: “How to organize the size of the border-radius?”. This question followed me for a long time.
 
 # The method I used to design
 
@@ -17,11 +17,11 @@ Later, I began to learn from the design styles of other websites. At that time, 
   title="old radial design"
 ></iframe>
 
-When our pages became complex, this approach will be cumbersome, sometimes I have to make many modifications to get the desire style.
+When our pages become complex, this approach will be cumbersome, sometimes I have to make many modifications to get the desired style.
 
 # Golden Ratio to organize border-radius
 
-I have always wanted a method to establish the size of border-radius for different containers. Someday I realized that I could use a ratio to organize the border-radius between parent and childrens elements. So I tried the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio):
+I have always wanted a method to establish the size of border-radius for different containers. Someday I realized that I could use a ratio to organize the border-radius between parent and child elements. So I tried the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio):
 
 1. For a known element has a border-radius _N_
 2. Set its children's border-radius with _N × 0.618_.
@@ -32,7 +32,7 @@ I have always wanted a method to establish the size of border-radius for differe
   title="golden ratio radius"
 ></iframe>
 
-I think that’s a useful skill, when you design the border-radius by this way, your component could be beautiful!~
+I think that’s a useful skill, when you design the border-radius in this way, your component could be beautiful!~
 
 # Ending
 
