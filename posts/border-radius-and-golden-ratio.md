@@ -24,7 +24,7 @@ When our pages became complex, this approach will be cumbersome, sometimes I hav
 I have always wanted a method to establish the size of border-radius for different containers. Someday I realized that I could use a ratio to organize the border-radius between parent and childrens elements. So I tried the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio):
 
 1. For a known element has a border-radius _N_
-2. Set its children's border-radius with _N _ 0.618\*.
+2. Set its children's border-radius with _N × 0.618_.
 3. You could use _Math.round_ to convert it to an integer, this will look neat.
 
 <iframe src="https://codesandbox.io/embed/golden-ratio-radius-37t58g?fontsize=14&hidenavigation=1&theme=dark&hidedevtools=1&codemirror=1"
