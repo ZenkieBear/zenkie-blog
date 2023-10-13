@@ -8,6 +8,7 @@ import rehypeFormat from 'rehype-format'
 import rehypeDocument from 'rehype-document'
 import rehypeStringify from 'rehype-stringify'
 import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -77,7 +78,8 @@ export async function getPostData(id) {
     // @ts-expect-error
     .use(remarkParse)
     // @ts-expect-error
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeFormat)
     .use(rehypeDocument)
     .use(rehypeHighlight)

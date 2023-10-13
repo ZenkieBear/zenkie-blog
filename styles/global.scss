@@ -1,6 +1,9 @@
 @use 'fonts';
 
 // Basics
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   padding: 0;
@@ -20,9 +23,8 @@ body {
   line-height: 1.6;
   font-size: 18px;
 }
-
-* {
-  box-sizing: border-box;
+:root {
+  --clr-primary: #{variables.$clr-primary};
 }
 ::selection {
   background-color: variables.$clr-primary;
