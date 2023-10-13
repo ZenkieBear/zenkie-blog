@@ -5,7 +5,7 @@ date: '2023-10-12'
 
 # Intro
 
-A few years ago, when I learned `border-radius`, I felt very fulfilled. It could make my html elements beautiful. And then I became confused: “How to organize the size of the border-radius?”. This question followed me for a long time.
+A few years ago, when I learned `border-radius`, I felt very fulfilled. It could make my HTML elements beautiful. And then I became confused: “How to organize the size of the border-radius?”. This question followed me for a long time.
 
 # The method I used to design
 
